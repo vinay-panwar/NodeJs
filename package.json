@@ -1,31 +1,41 @@
 {
-    "name": "nodejs",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "dependencies": {
-        "data-uri-to-buffer": "^4.0.0",
-        "fetch-blob": "^3.2.0",
-        "formdata-polyfill": "^4.0.10",
-        "json2csv": "^6.0.0-alpha.2",
-        "node-domexception": "^1.0.0",
-        "node-fetch": "^3.3.0",
-        "npm": "^9.2.0",
-        "nvm": "^0.0.4",
-        "path": "^0.12.7",
-        "web-streams-polyfill": "^3.2.1"
-    },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/vinayMindpath/NodeJs.git"
-    },
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/vinayMindpath/NodeJs/issues"
-    },
-    "homepage": "https://github.com/vinayMindpath/NodeJs#readme"
+	"name": "nodejs",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"data-uri-to-buffer": "^4.0.0",
+		"fetch-blob": "^3.2.0",
+		"formdata-polyfill": "^4.0.10",
+		"json2csv": "^6.0.0-alpha.2",
+		"node-domexception": "^1.0.0",
+		"node-fetch": "^3.3.0",
+		"npm": "^9.2.0",
+		"nvm": "^0.0.4",
+		"path": "^0.12.7",
+		"rimraf": "^4.4.0",
+		"web-streams-polyfill": "^3.2.1"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"clean": "rimraf dist",
+		"prebuild": "yarn clean",
+		"build": "tsc --build",
+		"prestart": "yarn build",
+		"start": "node dist/jsonToCsv/index.js",
+		"watch": "nodemon --config nodemon.json"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vinayMindpath/NodeJs.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/vinayMindpath/NodeJs/issues"
+	},
+	"homepage": "https://github.com/vinayMindpath/NodeJs#readme",
+	"devDependencies": {
+		"@types/json2csv": "^5.0.3"
+	}
 }
